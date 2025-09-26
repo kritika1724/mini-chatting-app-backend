@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Chat</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ece5dd; /* WhatsApp background */
+      padding: 20px;
+      margin: 0;
+    }
+
+    h1 {
+      color: #075e54;
+      text-align: center;
+    }
+
+    p {
+      font-size: 14px;
+      color: #555;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      resize: none;
+    }
+
+    button {
+      margin-top: 10px;
+      width: 100%;
+      padding: 10px;
+      background-color: #25d366; /* WhatsApp green */
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #1ebe5d;
+    }
+  </style>
+</head>
+<body>
+  <p>Edit Your Chat:<%=chat._id%></p>
+  <p> this chat was sent from <b><%=chat.sender %></b> to <b><%=chat.reciever%></b></p>
+  <form method ="POST" action = "/chats/<%=chat.id%>?_method=PUT" >
+    <textarea name="msg" rows="6"><%=chat.msg%></textarea>
+    <button type="submit">Edit</button>
+  </form>
+</body>
+</html>

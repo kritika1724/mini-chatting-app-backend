@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Chat</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ece5dd;
+      margin: 0;
+      padding: 20px;
+    }
+    h4 {
+      color: #075e54;
+    }
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      max-width: 400px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+    textarea {
+      resize: none;
+    }
+    button {
+      background-color: #25d366; /* WhatsApp green */
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    button:hover {
+      background-color: #1ebe5d;
+    }
+  </style>
+</head>
+<body>
+  <h4>Write your new chat</h4>
+  <form action="/chats" method="POST">
+    <!-- Sender Name -->
+    <input type="text" placeholder="Enter your name" name="from" required>
+
+    <!-- Receiver Name -->
+    <input type="text" placeholder="Enter receiver's name" name="to" required>
+
+    <!-- Message -->
+    <textarea placeholder="Enter your message" name="msg" rows="4" required></textarea>
+
+    <!-- Submit Button -->
+    <button type="submit">Send</button>
+  </form>
+</body>
+</html>
